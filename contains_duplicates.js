@@ -18,15 +18,12 @@
 
 // @param {number[]} nums
 // @return {boolean}
-
 const containsDuplicate = (nums) => {
-    for(let i=0; i<nums.length-1;i++){
-        for(let j=1; j<nums.length; j++){
-            console.log
-            if(nums[i] === nums[j] && i != j) {
-                return true;
-            }
+    nums.sort();
+    for (let i = 0; i < nums.length - 1; i++) {
+        if (nums[i] == nums[i + 1]) {
+            return true;
         }
     }
     return false;
-};
+}
