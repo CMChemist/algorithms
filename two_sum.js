@@ -16,9 +16,6 @@ const twoSum = (nums, target) => {
     let hashTable = {};
     for (let i = 0; i < nums.length; i++) {
         let complement = target - nums[i];
-        console.log('i = ', i)
-        console.log('complement = ', complement)
-        console.log('hashTable[complement] = ', hashTable[complement])
         if (hashTable[complement] != undefined) {
             return [hashTable[complement], i]
         }
