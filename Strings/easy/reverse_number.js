@@ -18,30 +18,15 @@
 // @param {number} x
 // @return {number}
 const reverse = (x) => {
-    let num = x.toString();
-    num = num.split('')
-    console.log('num = ', num)
-    let i = 0;
-    let j = num.length - 1;
-    let temp = '';
-
-    if (num[0] === '-') {
-        i = 1;
+    let reversed = 0;
+    while (x != 0) {
+        let pop = x % 10;
+        x = Math.trunc(x / 10);
+        if (reversed > 2147483647 / 10 || (reversed == 2147483647 / 10 && pop > 7)) return 0;
+        if (reversed < -2147483648 / 10 || (reversed == -2147483648 / 10 && pop < -8)) return 0;
+        reversed = reversed * 10 + pop;
     }
-    while (i < j) {
-        temp = num[j];
-        num[j] = num[i];
-        num[i] = temp;
-        console.log('i = ', i)
-        console.log('j = ', j)
-        console.log('temp = ', temp)
-        i++;
-        j--;
-
-    console.log('num = ', num)
-    }
-    num = num.join('');
-    return parseInt(num);
+    return reversed;
 };
 
 console.log(reverse(123))
