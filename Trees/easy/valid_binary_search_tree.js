@@ -37,6 +37,8 @@
  * }
  */
 
+//  RECURSIVE SOLUTION
+
 // @param {TreeNode} root
 // @return {boolean}
 var isValidBST = function(root) {
