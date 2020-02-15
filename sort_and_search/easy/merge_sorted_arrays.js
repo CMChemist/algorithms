@@ -27,9 +27,6 @@ var merge = function(nums1, m, nums2, n) {
     var insertPos = m + n - 1;
     m--; n--;
     while (n >= 0) {
-        console.log('m = ', m)
-        console.log('n = ', n)
-        console.log('nums1 = ', nums1)
         nums1[insertPos--] = (nums1[m] > nums2[n]) ? nums1[m--] : nums2[n--];
     }
 };
