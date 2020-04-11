@@ -11,19 +11,20 @@
 // @param {number} n
 // @return {number}
 var countPrimes = function(n) {
-    
-    
-    
+    let count = 0;
+    for(let i=1; i < n; i++) {
+        if(isPrime(i)) count++;
+    }
+    return count;
 };
 
 var isPrime = function(n) {
-    if (n % 2 == 0) return false; 
-    for(let i=3;i<=Math.sqrt(n);i+=2) { 
-        if(n%i==0) 
-            return false; 
-    } 
-    return true; 
+    if (n <= 1) return false;
+   for (let i = 2; i * i <= n; i++) {
+      if (n % i == 0) return false;
+   }
+   return true;
 }
 
 console.log(isPrime(19))
-console.log(isPrime(20))
+console.log(countPrimes(20))
